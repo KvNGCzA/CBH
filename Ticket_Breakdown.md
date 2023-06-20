@@ -18,28 +18,33 @@ You will be graded on the level of detail in each ticket, the clarity of the exe
 ## Your Breakdown Here
 **LEGEND: BE - Backend, FE - Frontend**
 
-1. **BE Ticket 1**: Create a new table named FacilitiesAgent Table
+1. Product Team ticket:
+    - **Acceptance criteria:**
+        1. Create designs and flows for the UI allowing Facilities to add custom ID's
+        2. Decide if custom_id are auto generated or added manually (Recommend)
+        3. Decide if Facilities can update this id (Don't recommend)
+        4. Decide rollout strategy (How many companies get this feature and pricing limitations e.t.c)
+        5. Make other essential design, product and pricing decisions.
+2. **BE Ticket 1**: Create a new table named FacilitiesAgent Table
    - **Acceptance criteria:**
       1. Add 3 columns facility_id, agent_id and custom_id
          1. The facility_id joins the row to the Facilities table
          2. The agent_id joins the row the Agent table
-         3. And the custom_id is the
+         3. And the custom_id is the id provided by the user
       2. Use the facility_id & agent_id as secondary indexes to easily find a combination of these values
-2. BE Ticket 2: Create an endpoint to allow facilities to add custom_ids
+3. BE Ticket 2: Create an endpoint to allow facilities to add custom_ids
     - **Acceptance criteria:**
       1. When Adding a new custom_id, the combination of the facility_id & agent_id is unique, therefore we cannot have two rows with identical facility_id & agent_id - Ensure this constraint
       2. This endpoint must not perform updates at the moment
-3. Product Team ticket: 
-   - **Acceptance criteria:**
-      1. Create designs and flows for the UI allowing Facilities to add custom ID's
-      2. Decide if Facilities can update this id (Won't recommend)
-      3. Decide rollout strategy (How many companies get this feature and pricing limitations e.t.c)
-4. FE Ticket 1: Build component and flow using designs (in the storybook)
+4. BE Ticket 3: Update `generateReport` function:
+    - **Acceptance criteria:**
+      - We should update the agents internal id with the custom_id fetched using the secondary keys `facility_id` & `agent_id`
+5. FE Ticket 1: Build component and flow using designs (in the storybook)
     - **Acceptance criteria:**
       - I can view the component in the storybook and it works as expected
-5. FE Ticket 2: Establish API connection
+6. FE Ticket 2: Establish API connection
     - **Acceptance criteria:**
-      - Feature works as expected with APi connection
-6. FE &/or BE Ticket 3: Write feature/unit tests
+      - Feature works as expected with API connection
+7. FE 3 & BE Ticket 4: Write feature/unit tests
     - **Acceptance criteria:**
       - As much coverage as possible
